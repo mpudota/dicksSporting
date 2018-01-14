@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Dick\'s Venues</string>
     <string name="title_activity_details">Details</string>
+    <string name="store_url_title">Visit Our Store Here</string>
+    <string name="venue_rating_title">Rating</string>
+    <string name="store_photos_title">Photos</string>
+    <string name="store_address_title">Store Location</string>
 </resources>
