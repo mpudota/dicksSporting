@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollview_detail_activity"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,13 +18,15 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:textSize="19dp"
-
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:id="@+id/store_url_title"
         android:text="@string/store_url_title"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/store_url_value"
+        android:textColor="@color/colorPrimary"
         android:padding="10dp"
 
         android:textSize="15dp"/>
@@ -27,8 +34,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="19dp"
+        android:textColor="@color/black"
         android:padding="10dp"
-
+        android:textStyle="bold"
         android:text="@string/venue_rating_title"
         android:id="@+id/venue_rating_title"/>
     <TextView
@@ -42,6 +50,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/store_address"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:text="@string/store_address_title"
         android:padding="10dp"
         android:textSize="19dp"/>
@@ -50,14 +60,51 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="15dp"
+        android:textColor="@color/colorPrimary"
         android:padding="10dp"
         android:id="@+id/store_address_value"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         android:padding="10dp"
         android:textSize="19dp"
+        android:textStyle="bold"
+        android:id="@+id/contact_details_title"
+        android:text="@string/contact_details_title"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:padding="10dp"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/phone_value"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textColor="@color/colorPrimary"
+        android:padding="10dp"
+        android:id="@+id/twitter_value"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:padding="10dp"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/facebook_value"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
         android:text="@string/store_photos_title"
         android:id="@+id/store_photos_title"/>
 
@@ -77,3 +124,4 @@
     </LinearLayout>
 
 </LinearLayout>
+</ScrollView>

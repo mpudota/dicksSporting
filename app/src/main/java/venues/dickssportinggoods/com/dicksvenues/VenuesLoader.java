@@ -4,8 +4,6 @@ import android.content.AsyncTaskLoader;
 import android.content.Context;
 import android.util.Log;
 
-import org.json.JSONException;
-
 import java.net.URL;
 
 /**

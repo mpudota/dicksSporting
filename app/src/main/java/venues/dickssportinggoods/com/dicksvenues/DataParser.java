@@ -17,12 +17,10 @@ public class DataParser {
             JSONObject fetchedData = new JSONObject(jsonArray);
             JSONArray venues = fetchedData.getJSONArray("venues");
             JSONObject venuesInfo = venues.getJSONObject(position);
-            return "DICK's Sporting Goods " + venuesInfo.getString("storeId");
+            return venuesInfo.getString("name") +" " + venuesInfo.getString("storeId") + position;
         } catch (JSONException e) {
-            return "DICKs Sporting Goods";
+            return "DICKs Sporting Goods" + position;
         }
-
-
     }
 
     public String storeURL (String jsonArray, int position) {
@@ -35,8 +33,6 @@ public class DataParser {
             e.printStackTrace();
             return "URL not Found";
         }
-
-
     }
 
     public float storeRating (String jsonArray, int position) {
@@ -48,7 +44,6 @@ public class DataParser {
         } catch (JSONException e) {
             return -1f;
         }
-
     }
 
     public String ratingColor (String jsonArray, int position) {
@@ -86,7 +81,6 @@ public class DataParser {
             JSONObject venuesInfo = venues.getJSONObject(position);
             JSONObject venue_address = venuesInfo.getJSONObject("location");
             String[] address = new String[5];
-
             address[0] = venue_address.getString("address");
             address[1] = venue_address.getString("city");
             address[2] = venue_address.getString("state");
@@ -107,8 +101,8 @@ public class DataParser {
             JSONObject venuesInfo = venues.getJSONObject(position);
             JSONObject venue_address = venuesInfo.getJSONObject("location");
             double[] longLat = new double[2];
-            longLat[0] = venue_address.getDouble("longitude");
-            longLat[1] = venue_address.getDouble("latitude");
+            longLat[0] = venue_address.getDouble("latitude");
+            longLat[1] = venue_address.getDouble("longitude");
             return longLat;
         } catch (JSONException e) {
             return null;
@@ -116,5 +110,23 @@ public class DataParser {
 
     }
 
+    public String[] contacts (String jsonArray, int position) {
 
+        try {
+            JSONObject fetchedData = new JSONObject(jsonArray);
+            JSONArray venues = fetchedData.getJSONArray("venues");
+            JSONObject venuesInfo = venues.getJSONObject(position);
+            JSONArray contacts = venuesInfo.getJSONArray("contacts");
+            JSONObject contactsInfo = contacts.getJSONObject(0);
+            String[] strings = new String [4];
+            strings[0] = contactsInfo.getString("phone");
+            strings[1] = contactsInfo.getString("twitter");
+            strings[2] = contactsInfo.getString("facebook");
+            strings[3] = contactsInfo.getString("facebookName");
+            return strings;
+        } catch (JSONException e) {
+            return null;
+        }
+
+    }
 }
